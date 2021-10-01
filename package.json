@@ -1,0 +1,24 @@
+{
+  "name": "weather-project",
+  "version": "1.0.0",
+  "description": "This project uses user location coordinates to find weather information of that location.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "weather",
+    "data",
+    "openweather",
+    "API"
+  ],
+  "author": "Bhavesh Yadav",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "opencage-api-client": "^1.0.0"
+  }
+}
