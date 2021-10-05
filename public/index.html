@@ -6,14 +6,42 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather App</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <p id="location">Location:</p>
-  <h1 id="temp">temperature°</h1>
-  <h2 id="description">Description</h2>
 
-  <script src="index.js"></script>
+  <!-- center div -->
+  <div class="centerCard">
+
+    <!-- show current data  -->
+    <div class="currentData">
+      <img src="weatherIcons/location.svg" alt="Location icon" />
+
+      <h1 id="location" class="styleH1">Mumbai, In</h1>
+
+      <img src="weatherIcons/sun.svg" alt="Location icon" />
+
+      <h1 id="temp" class="styleH1">29°c</h1>
+
+      <h1 id="date" class="styleH1">Monday, <a id="time" class="styleTime">5:30</a></h1>
+
+      <h4 class="styleH4">Description - <a id="description" class="styleH4">Sunny</a></h4>
+
+      <h4 class="styleH4">Air Quality - <a id="airQuality" class="styleH4">Unhealthy</a> 👎🏻</h4>
+
+      <h4 class="styleH4">Rain pron - <a id="rainProb" class="styleH4">30%</a></h4>
+
+      <h4 class="styleH4">Visibilty - <a id="visibility" class="styleH4">5.2km (Average)</a></h4>
+
+    </div>
+
+    <!-- show extra data -->
+    <div class="extraData">
+      <img src="weatherIcons/sun.svg" alt="Location icon" />
+    </div>
+
+  </div>
 </body>
 
 </html>

@@ -1,0 +1,17 @@
+.centerCard {
+  display: grid;
+  grid-auto-flow: column;
+  width: 90%;
+  margin: auto;
+  margin-top: 3rem;
+  border: 5px solid red;
+  grid-template-columns: 30% 70%;
+}
+
+.currentData {
+  border: 5px solid blue;
+}
+
+.extraData {
+  border: 5px solid green;
+}

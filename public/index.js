@@ -36,6 +36,6 @@ function showWeatherData(result) {
   tz.innerText = result.data.timezone;
   temp.innerText = result.data.current.temp.toPrecision(2) + '°';
   desc.innerText = result.data.current.weather[0].description;
-  console.log(result.data.timezone);
+  console.log(result.status);
 }
 
