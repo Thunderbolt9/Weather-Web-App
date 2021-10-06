@@ -10,18 +10,15 @@ body {
   width: 90%;
   margin: auto;
   margin-top: 2rem;
-  // border: 5px solid red;
   grid-template-columns: 25% 75%;
-  
-  // border-radius: 25px;
 }
 
 /* styling left card*/
 .currentData {
-  border: 5px solid blue;
   background-color: #FFFFFF;
   padding: 2rem;
   padding-top: 1rem;
+  border-radius: 25px 0 0 25px;
 }
 
 /*clubbing loc icon and loc name together*/
@@ -82,8 +79,39 @@ sup {
   font-size: 1.2rem;
   font-weight: normal;
 }
+
+
+
 .extraData {
-  border: 5px solid green;
+  // border: 5px solid green;
   background-color: #F5F5F5;
+  border-radius: 0 25px 25px 0;
 }
 
+.forecast_label {
+  margin: 2.49rem 0 0 2.5rem;
+}
+
+.dayForecast {
+  display: flex;
+  margin: 2rem 2.5rem 0 2.5rem;
+}
+
+.eachForecast {
+  background-color: #FFFFFF;
+  border: 1px solid #000000;
+  width: 155px;
+  height: 158px;
+  border-radius: 20px;
+  margin-right: 1rem;
+}
+
+.styleH3 {
+  font-family: 'Lato', sans-serif;
+  margin-left: 2.26rem;
+}
+
+.weatherIcons {
+  margin-left: 2rem;
+  width: 40%;
+}
