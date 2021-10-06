@@ -1,17 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+  background-color: #FFAC33;
+}
+
 .centerCard {
   display: grid;
   grid-auto-flow: column;
   width: 90%;
   margin: auto;
-  margin-top: 3rem;
-  border: 5px solid red;
-  grid-template-columns: 30% 70%;
+  margin-top: 2rem;
+  // border: 5px solid red;
+  grid-template-columns: 25% 75%;
+  
+  // border-radius: 25px;
 }
 
+/* styling left card*/
 .currentData {
   border: 5px solid blue;
+  background-color: #FFFFFF;
+  padding: 2rem;
+  padding-top: 1rem;
 }
 
+/*clubbing loc icon and loc name together*/
+.locationHeader {
+  display: flex;
+  // border: 5px solid blue;
+}
+
+/*Giving gap in between icon and name*/
+#location {
+  margin-left: 0.3rem;
+}
+
+/*Giving gap in between loc icon and border*/
+.locImg {
+  margin-left: 1.3rem;
+}
+
+/*Styling main weather icon*/
+.mainImg {
+  width: 60%;
+  margin-left: 3rem;
+}
+
+/*Styling temperature data*/
+#temp {
+  font-size: 65px;
+  margin-left: 3.7rem;
+  margin-top: 1.8rem;
+}
+
+/*Styling celcius character*/
+sup {
+  font-size: 42px;
+}
+
+/*Styling Date*/
+#date {
+  margin-left: 30px;
+}
+
+.styleTime {
+  color: #ADADAD;
+}
+
+.horinzontalLine {
+  border: 1px solid #898888;
+}
+
+
+.styleH1 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+}
+
+.styleH4  {
+  font-family: Lato;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
 .extraData {
   border: 5px solid green;
+  background-color: #F5F5F5;
 }
+
