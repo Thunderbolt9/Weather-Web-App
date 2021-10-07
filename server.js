@@ -16,7 +16,7 @@ app.post('/', (req, res) => {
   const lat = req.body.lat.toFixed(2);
   const lon = req.body.long.toFixed(2);
   const api_key = process.env.API_KEY;
-  const api_url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,daily&appid=${api_key}&units=metric`;
+  const api_url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,alerts&appid=${api_key}&units=metric`;
 
   https.get(api_url, (response) => {
     let data = '';
