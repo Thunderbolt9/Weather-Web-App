@@ -45,6 +45,7 @@ async function getWeatherData(position) {
   showWeather(result);
 };
 
+
 function dateTime(unix_timestamp) {
   var date = new Date(unix_timestamp * 1000);
 
@@ -52,10 +53,10 @@ function dateTime(unix_timestamp) {
   var d = date.getDay();
 
   // Hours part from the timestamp to IST
-  var h = date.getHours() + 5;
+  var h = date.getHours();
 
   // Minutes part from the timestamp
-  var m = date.getMinutes() + 30;
+  var m = date.getMinutes();
 
   // Will display time in 10:30:23 format
   var _time = (h > 12) ? (h - 12 + ':' + m + ' PM') : (h + ':' + m + ' AM');
