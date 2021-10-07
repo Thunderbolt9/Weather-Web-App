@@ -38,7 +38,7 @@ body {
 }
 
 /*Styling main weather icon*/
-.mainImg {
+#mainImg {
   width: 60%;
   margin-left: 3rem;
 }
@@ -56,8 +56,8 @@ sup {
 }
 
 /*Styling Date*/
-#date {
-  margin-left: 30px;
+#day {
+  margin-left: 17px;
 }
 
 .styleTime {
@@ -114,4 +114,9 @@ sup {
 .weatherIcons {
   margin-left: 2rem;
   width: 40%;
+}
+
+.graph {
+  width: 90%;
+  margin: 2rem 2.5rem 1rem 2.5rem;
 }
