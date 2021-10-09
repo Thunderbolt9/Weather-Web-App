@@ -23,10 +23,10 @@ if (navigator.geolocation) {
 }
 
 
-
+// Post request weather data from server
 async function getWeatherData(position) {
-  const lat = 19.1905; // position.coords.latitude;
-  const long = 73.1866;// position.coords.longitude;
+  const lat = 26.8467;   //position.coords.latitude;
+  const long = 80.9462; // position.coords.longitude;
   const location = { lat, long };
 
   const options = {
@@ -45,7 +45,7 @@ async function getWeatherData(position) {
   showWeather(result);
 };
 
-
+// Converting timestamp to date time
 function dateTime(unix_timestamp) {
   var date = new Date(unix_timestamp * 1000);
 
@@ -61,11 +61,16 @@ function dateTime(unix_timestamp) {
   // Will display time in 10:30:23 format
   var _time = (h > 12) ? (h - 12 + ':' + m + ' PM') : (h + ':' + m + ' AM');
 
+  if (_time.split(":")[0] == 0) {
+    const t = _time.split(":");
+    t[0] = 12;
+    _time = t[0] + ":" + t[1];
+  }
+
   return [_time, d];
 }
 
-
-
+// Get weather icons
 function getWeatherIcon(icon, eachDayImg) {
   const thunderstorm = ["11d", "11n"];
   const rain = ["10d", "09d", "10n", "09n"];
@@ -73,39 +78,36 @@ function getWeatherIcon(icon, eachDayImg) {
   const haze = ["50d", "50n"];
   const sun = ["01d", "01n"];
   const clouds = ["02d", "02n", "03d", "03n", "04d", "04n", "04d", "04n"];
-  const bgColor = document.body.style;
   if (clouds.includes(icon)) {
     eachDayImg.src = "weatherIcons/cloud.svg";
-    bgColor.backgroundColor = "#75D6FF";
+    return 0;
 
   } else if (sun.includes(icon)) {
     eachDayImg.src = "weatherIcons/sun.svg";
-    bgColor.backgroundColor = "#FFAC33";
+    return 1;
 
   } else if (haze.includes(icon)) {
     eachDayImg.src = "weatherIcons/haze.svg";
-    bgColor.backgroundColor = "#545454";
+    return 2;
 
   } else if (rain.includes(icon)) {
     eachDayImg.src = "weatherIcons/rain.svg";
-    bgColor.backgroundColor = "#6E62ED";
+    return 3;
 
   } else if (snow.includes(icon)) {
     eachDayImg.src = "weatherIcons/snow.svg";
-    bgColor.backgroundColor = "#AFE3FF";
+    return 4;
 
   } else if (thunderstorm.includes(icon)) {
     eachDayImg.src = "weatherIcons/thunder.svg";
-    bgColor.backgroundColor = "#E4EAEE";
+    return 5;
 
   } else {
-    eachDayImg.src = "#";
+    console.log(icon);
   }
 }
 
-
-
-
+// Show weather data in html page
 function showWeather(result) {
 
   //Set locations
@@ -113,7 +115,9 @@ function showWeather(result) {
 
   //Set background and mainImg
   const mainImg = document.getElementById("mainImg");
-  getWeatherIcon(result.data.current.weather[0].icon, mainImg);
+  const colorFlag = getWeatherIcon(result.data.current.weather[0].icon, mainImg);
+  const colourArray = ["#75D6FF", "#FFAC33", "#545454", "#6E62ED", "#AFE3FF", "#E4EAEE"]
+  document.body.style.backgroundColor = colourArray[colorFlag];
 
   // Set temperature
   const tempCalc = Math.round(result.data.current.temp);
@@ -121,9 +125,10 @@ function showWeather(result) {
 
   // Set day and date
   const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  const dtResult = dateTime(result.data.current.dt);
+  let dtResult = dateTime(result.data.current.dt);
+  const onlyTime = dtResult[0].split(" ");
   const dayinfo = weekdays[dtResult[1]];
-  day.innerHTML = `${dayinfo},<a class="styleTime"> ${dtResult[0].replace('PM', '')}</a>`;
+  day.innerHTML = `${dayinfo},<a class="styleTime"> ${onlyTime[0]}</a>`;
 
   // Set Descriptions
   desc.innerText = result.data.current.weather[0].main;
@@ -154,8 +159,6 @@ function showWeather(result) {
 
   createChart(hourlyPop, timePop);
 }
-
-
 
 // Creating Chart
 function createChart(hourlyPop) {
