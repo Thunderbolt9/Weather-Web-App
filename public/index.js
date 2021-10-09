@@ -25,8 +25,8 @@ if (navigator.geolocation) {
 
 
 async function getWeatherData(position) {
-  const lat = position.coords.latitude;
-  const long = position.coords.longitude;
+  const lat = 19.1905; // position.coords.latitude;
+  const long = 73.1866;// position.coords.longitude;
   const location = { lat, long };
 
   const options = {
@@ -39,8 +39,8 @@ async function getWeatherData(position) {
   };
 
   // Client request for weather data to server
-  const response = await fetch('/', options);
-  const result = await response.json();
+  const response_weather_data = await fetch('/', options);
+  const result = await response_weather_data.json();
 
   showWeather(result);
 };
@@ -73,29 +73,30 @@ function getWeatherIcon(icon, eachDayImg) {
   const haze = ["50d", "50n"];
   const sun = ["01d", "01n"];
   const clouds = ["02d", "02n", "03d", "03n", "04d", "04n", "04d", "04n"];
+  const bgColor = document.body.style;
   if (clouds.includes(icon)) {
     eachDayImg.src = "weatherIcons/cloud.svg";
-    document.body.style.backgroundColor = "#75D6FF";
+    bgColor.backgroundColor = "#75D6FF";
 
   } else if (sun.includes(icon)) {
     eachDayImg.src = "weatherIcons/sun.svg";
-    document.body.style.backgroundColor = "#FFAC33";
+    bgColor.backgroundColor = "#FFAC33";
 
   } else if (haze.includes(icon)) {
     eachDayImg.src = "weatherIcons/haze.svg";
-    document.body.style.backgroundColor = "#545454";
+    bgColor.backgroundColor = "#545454";
 
   } else if (rain.includes(icon)) {
     eachDayImg.src = "weatherIcons/rain.svg";
-    document.body.style.backgroundColor = "#6E62ED";
+    bgColor.backgroundColor = "#6E62ED";
 
   } else if (snow.includes(icon)) {
     eachDayImg.src = "weatherIcons/snow.svg";
-    document.body.style.backgroundColor = "#AFE3FF";
+    bgColor.backgroundColor = "#AFE3FF";
 
   } else if (thunderstorm.includes(icon)) {
     eachDayImg.src = "weatherIcons/thunder.svg";
-    document.body.style.backgroundColor = "#E4EAEE";
+    bgColor.backgroundColor = "#E4EAEE";
 
   } else {
     eachDayImg.src = "#";
@@ -106,6 +107,9 @@ function getWeatherIcon(icon, eachDayImg) {
 
 
 function showWeather(result) {
+
+  //Set locations
+  loc.innerText = result.cn;
 
   //Set background and mainImg
   const mainImg = document.getElementById("mainImg");

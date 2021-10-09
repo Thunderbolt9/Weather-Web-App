@@ -9,7 +9,7 @@ body {
   grid-auto-flow: column;
   width: 90%;
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   grid-template-columns: 25% 75%;
 }
 
