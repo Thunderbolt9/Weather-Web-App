@@ -25,8 +25,8 @@ if (navigator.geolocation) {
 
 // Post request weather data from server
 async function getWeatherData(position) {
-  const lat = 26.8467;   //position.coords.latitude;
-  const long = 80.9462; // position.coords.longitude;
+  const lat = position.coords.latitude;
+  const long = position.coords.longitude;
   const location = { lat, long };
 
   const options = {
