@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 const https = require('https');
 const opencage = require('opencage-api-client');
+const port = process.env.PORT || 3000;
 require('dotenv').config();
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("Listening to 3000");
 });
 
