@@ -27,7 +27,7 @@ Run commands
 2) ```npm run dev```
 
 
-## Or using yarn
+### Or using yarn
 
 Run commands 
 
