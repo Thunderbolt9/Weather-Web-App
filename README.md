@@ -15,15 +15,28 @@ Check Current weather of your location. This project was built using <strong>HTM
 [Git download](https://git-scm.com/downloads)
 
 ## Getting started 😄 📑
-- First install all the essentials mentioned above.
-- Open your git bash terminal and copy paste below code.
-  
-  cd name_of_folder_to_copy
-  git clone https://github.com/Thunderbolt9/Weather-Web-App.git
-  
-  - The above line of code first opens a folder you want and then clone the files of this repository into the folder.
-  
-- Note: <strong>Allow your particular browser access to your location in order to get data for your location</strong>
+- Clone this repo or download in your loacl machine.
+
+### Using npm
+
+Run commands
+
+1) ```npm install```
+
+
+2) ```npm run dev```
+
+
+## Or using yarn
+
+Run commands 
+
+1) ```npm install --global yarn```
+
+2) ```yarn install```
+
+3) ```yarn run dev```
+
 
 ## Links 🔗
 - In case of sensitive bugs like security vulnerabilities, please contact
